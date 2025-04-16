@@ -45,6 +45,10 @@ class CarController extends Controller
     
     public function show(Car $car)
     {
+        if (!$car) {
+            abort(404); // O redireccionar con un mensaje de error
+        }
+
         return view('cars.show', compact('car'));
     }
     
