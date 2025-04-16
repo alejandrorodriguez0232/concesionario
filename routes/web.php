@@ -25,7 +25,15 @@ Route::get('/dashboard', function () {
 
 //Route::resource('cars', CarController::class);
 // Rutas de autos (el middleware 'auth' se maneja en el controlador)
-Route::resource('cars', CarController::class);
+//Route::resource('cars', CarController::class);
+Route::resource('cars', CarController::class)->middleware(['auth']);
+
+// Rutas protegidas por ownership
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('cars.edit');
+    Route::put('/cars/{car}', [CarController::class, 'update'])->name('cars.update');
+    Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
+});
 
 Route::get('/cars/search', [CarController::class, 'search'])->name('cars.search');
 
