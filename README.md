@@ -24,6 +24,7 @@
     DB_USERNAME=postgres
     DB_PASSWORD=12345
 
+- Crea una base de datos llamada: concesionario, previo a los siguientes comandos:
 
 - composer install
 - npm install
