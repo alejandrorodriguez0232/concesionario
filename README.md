@@ -1,5 +1,29 @@
 
 ## Instalacion
+- Renombrar el archivo: .env.example a .env y colocar las credenciales de la base de datos postgresql
+
+- Ejemplo: 
+
+    buscar esta linea:
+
+    DB_CONNECTION=pgsql
+    DB_HOST=127.0.0.1
+    DB_PORT=5432
+    DB_DATABASE=concesionario
+    DB_USERNAME=postgres
+    DB_PASSWORD=tu_clave_bd
+
+    Donde refiere a: DB_PASSWORD=tu_clave_bd, sustituir (tu_clave_bd) por la clave de tu base de datos postgresql correspondiente
+
+    Ejemplo con clave: 12345
+
+    DB_CONNECTION=pgsql
+    DB_HOST=127.0.0.1
+    DB_PORT=5432
+    DB_DATABASE=concesionario
+    DB_USERNAME=postgres
+    DB_PASSWORD=12345
+
 
 - composer install
 - npm install
