@@ -29,7 +29,15 @@
 
             <!-- Page Content -->
             <main>
-                @yield('content')
+            @isset($slot)
+                    {{ $slot }}
+                @else
+                    @hasSection('content')
+                        @yield('content')
+                    @else
+                    @endhasSection
+                @endisset
+            @endisset 
             </main>
         </div>
     </body>
